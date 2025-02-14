@@ -1,0 +1,154 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+--زنقه زنقه
+
+local Window = Rayfield:CreateWindow({
+   Name = "Rakan Hub",
+   LoadingTitle = "Rakan Hub",
+   LoadingSubtitle = "by Rakan",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Rakan hub4"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Use the key",
+      Subtitle = "Key System",
+      Note = "Ask Rakan for key",
+      FileName = "awgresdgasdsad",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"RakanRakan0000"}
+   }
+})
+
+local MainTab = Window:CreateTab("Player", nil)
+local MainSection = MainTab:CreateSection("Player Stats")
+
+Rayfield:Notify({
+   Title = "You executed the script",
+   Content = "Very cool gui",
+   Duration = 5,
+   Image = 12043759959,
+   Actions = {
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+            print("The user tapped Okay!")
+         end
+      },
+   },
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Jump (Reset = off)",
+   Callback = function()
+       _G.infinjump = not _G.infinjump
+
+       if _G.infinJumpStarted == nil then
+           _G.infinJumpStarted = true
+           
+           game.StarterGui:SetCore("SendNotification", {Title="Rakan Hub"; Text="Infinite Jump Activated!"; Duration=2;})
+
+           local plr = game:GetService('Players').LocalPlayer
+           local m = plr:GetMouse()
+           m.KeyDown:connect(function(k)
+               if _G.infinjump then
+                   if k:byte() == 32 then
+                       humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+                       humanoid:ChangeState('Jumping')
+                       wait()
+                       humanoid:ChangeState('Seated')
+                   end
+               end
+           end)
+       end
+   end,
+})
+
+local Input = MainTab:CreateInput({
+   Name = "WalkSpeed",
+   PlaceholderText = "1~1000",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Text)
+   end,
+})
+
+local Input = MainTab:CreateInput({
+   Name = "JumpPower",
+   PlaceholderText = "1~1000",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(Text) -- Fixed: Changed Text to be properly converted to number
+   end,
+})
+
+local OtherSection = MainTab:CreateSection("Other")
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Auto Farm",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+        print("FARMING")
+   end,
+})
+
+local TPTab = Window:CreateTab("Troll", nil)
+
+local Button1 = TPTab:CreateButton({
+   Name = "Single Player fling",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/SxRkenxS/Rakan-Fling/refs/heads/main/Rakan%201%20player%20fling", true))()
+        --Teleport1a
+   end,
+})
+
+local Button1 = TPTab:CreateButton({
+   Name = "Single Player fling",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/SxRkenxS/Rakan-Fling/refs/heads/main/Rakan%201%20player%20fling", true))()
+        --Teleport1a
+   end,
+})
+
+local Button1 = TPTab:CreateButton({
+   Name = "Anti afk",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/SxRkenxS/Anti-afk/refs/heads/main/Anti%20afk'))();
+        --Teleport1a
+   end,
+})
+
+local TPTab = Window:CreateTab("Game's", nil)
+
+local Button1 = TPTab:CreateButton({
+   Name = "FFJ Hub for TSB",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-FFJ-Hub-21158"))()
+        --Teleport1a
+   end,
+})
+
+local Button1 = TPTab:CreateButton({
+   Name = "MM2",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsVingare1/Dupe-MM2/refs/heads/main/Script", true))()
+        --Teleport1a
+   end,
+})
+
+local Button1 = TPTab:CreateButton({
+   Name = "Anti afk",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/SxRkenxS/Anti-afk/refs/heads/main/Anti%20afk'))();
+        --Teleport1a
+   end,
+})
