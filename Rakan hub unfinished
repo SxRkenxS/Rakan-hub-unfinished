@@ -155,3 +155,12 @@ local Button1 = TPTab:CreateButton({
         --Teleport1a
    end,
 })
+
+local TPTab = Window:CreateTab("The Gui", nil)
+
+local Button1 = TPTab:CreateButton({
+   Name = "Disable gui completely",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
