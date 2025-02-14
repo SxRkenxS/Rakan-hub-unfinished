@@ -81,12 +81,15 @@ local Input = MainTab:CreateInput({
    end,
 })
 
-local Input = MainTab:CreateInput({
-   Name = "JumpPower",
-   PlaceholderText = "1~1000",
-   RemoveTextAfterFocusLost = false,
-   Callback = function(Text)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(Text) -- Fixed: Changed Text to be properly converted to number
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed Slider",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
    end,
 })
 
